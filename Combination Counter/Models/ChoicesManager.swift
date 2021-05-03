@@ -127,11 +127,25 @@ class ChoicesManager: ObservableObject {
     
     
     
+    // MARK: - Formatting data for export.
+    func combinationsForExport() -> String {
+        var formattedText = ""
+        for combo in self.programmeCombinations {
+            for moduleCode in combo {
+                formattedText = formattedText + moduleCode + ","
+            }
+            formattedText = formattedText + "\n"
+        }
+        return formattedText
+    }
+    
+    
+    
+    
 }
 
 
 
-// MARK: -
 private typealias CombinationHelpers = ChoicesManager
 extension CombinationHelpers  {
     

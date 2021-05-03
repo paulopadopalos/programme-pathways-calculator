@@ -28,6 +28,8 @@ class Choice: Identifiable, ObservableObject, Codable {
     
     
     // MARK: - Saving and Loading
+    /// Because we're using a custom enum (ChoiceType), just delaring this class as conforming to the
+    /// *Codable* protocol isn't enough  – we need to explicitly write the code for loading and saving.
     
     
     
@@ -64,6 +66,7 @@ class Choice: Identifiable, ObservableObject, Codable {
     }
     
     
+    
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(id, forKey: .id)
@@ -84,12 +87,10 @@ class Choice: Identifiable, ObservableObject, Codable {
         
         var validCombinations: [[String]] = []
         
-        // What we do depends upon whether this choice is for
-        // a number of credits, or a number of units.
         switch (self.choiceType) {
             
             case .module:
-                // This case is simple. It's just choose m from n.
+                /// This case is simple. It's just choose m from n.
                 let comboIndices = combosOfLength(n: self.modules.count, m: self.choiceNumber)
                 for indexSet in comboIndices {
                     var newCombination: [String] = []
@@ -100,8 +101,8 @@ class Choice: Identifiable, ObservableObject, Codable {
                 }
             
             case .credit:
-                // This case is complicated. It's choose m from n, for all value of m
-                // from 1 to n. We then have to validate each choice for whether it gives us sufficient credits.
+                /// This case is complicated. It's choose m from n, for all value of m between 1 and n.
+                /// We then have to validate each choice for whether it contains sufficient credits.
                 for counter in 1...self.modules.count {
                     let comboIndices = combosOfLength(n: self.modules.count, m: counter)
                     for indexSet in comboIndices {
@@ -173,63 +174,4 @@ enum ChoiceType: Int, CaseIterable, Codable {
         get { return niceName() }
     }
 
-}
-
-
-
-///
-/// This code was found on StackOverflow, answering a question about finding combinations
-/// with repetition using Swift 5. We can make use of this if we look for all combinations
-/// and include "nothing" as an option. We can then exclude any combination which doesn't
-/// provide the correct number of credits, and any combination which includes the same
-/// module more than once.
-/// https://stackoverflow.com/questions/57232327/finding-all-combinations-in-an-array-swift-5-with-enumeration
-///
-struct CombinationsWithRepetition<C: Collection> : Sequence {
-
-    let base: C
-    let length: Int
-
-    init(of base: C, length: Int) {
-        self.base = base
-        self.length = length
-    }
-
-    struct Iterator : IteratorProtocol {
-        let base: C
-
-        var firstIteration = true
-        var finished: Bool
-        var positions: [C.Index]
-
-        init(of base: C, length: Int) {
-            self.base = base
-            finished = base.isEmpty
-            positions = Array(repeating: base.startIndex, count: length)
-        }
-
-        mutating func next() -> [C.Element]? {
-            if firstIteration {
-                firstIteration = false
-            } else {
-                // Update indices for next combination.
-                finished = true
-                for i in positions.indices.reversed() {
-                    base.formIndex(after: &positions[i])
-                    if positions[i] != base.endIndex {
-                        finished = false
-                        break
-                    } else {
-                        positions[i] = base.startIndex
-                    }
-                }
-
-            }
-            return finished ? nil : positions.map { base[$0] }
-        }
-    }
-
-    func makeIterator() -> Iterator {
-        return Iterator(of: base, length: length)
-    }
 }

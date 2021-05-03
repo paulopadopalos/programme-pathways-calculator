@@ -16,6 +16,7 @@ struct ResultsView: View {
     @State var numberOfCombinations: Int = 0
     
     @State var isCalculating: Bool = false
+    @State var isPresentingShareSheet: Bool = false
     
     
     
@@ -47,15 +48,38 @@ struct ResultsView: View {
             // List of combinations
             List {
                 ForEach(choicesManager.programmeCombinations, id:\.self) { myCombo in
-                    VStack {
+                    HStack {
                         Text(wordingForCombination(combo: myCombo))
-                        HStack {
+                            .padding(10)
+                            .background(Color.gray)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                        Spacer()
+                        VStack {
                             Text("\(creditsFor(combination: myCombo)) credits")
+                                .font(.system(size: 12.0, weight: .regular))
+                                .lineLimit(1)
+                                .foregroundColor(.white)
+                                .padding(5)
+                                .background(Color.green)
+                                .cornerRadius(5)
                             Text("\(hoursFor(combination: myCombo)) hours")
+                                .font(.system(size: 12.0, weight: .regular))
+                                .lineLimit(1)
+                                .foregroundColor(.white)
+                                .padding(5)
+                                .background(Color.green)
+                                .cornerRadius(5)
                         }
                     }
                 }
             }
+            Button(action:exportCombinations) {
+                Image(systemName:"square.and.arrow.up")
+                Text("Export Combinations")
+            }
+            .padding()
+            .sheet(isPresented: $isPresentingShareSheet,
+                   content: { ShareSheet (activityItems: [self.choicesManager.combinationsForExport()])})
             
         }
         
@@ -107,6 +131,12 @@ struct ResultsView: View {
         self.choicesManager.calculateProgrammeChoices()
         self.numberOfCombinations = choicesManager.programmeCombinations.count
         self.isCalculating = false
+    }
+    
+    
+    
+    func exportCombinations() {
+        self.isPresentingShareSheet = true
     }
     
     

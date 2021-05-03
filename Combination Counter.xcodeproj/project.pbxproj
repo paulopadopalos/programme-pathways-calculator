@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA02D03C26403FC300B224B0 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA02D03B26403FC300B224B0 /* ShareSheet.swift */; };
 		DA57B31725E7E96B00ED0342 /* Combination_CounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57B31625E7E96B00ED0342 /* Combination_CounterApp.swift */; };
 		DA57B31925E7E96B00ED0342 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57B31825E7E96B00ED0342 /* FirstView.swift */; };
 		DA57B31B25E7E96E00ED0342 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA57B31A25E7E96E00ED0342 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA02D03B26403FC300B224B0 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		DA57B31325E7E96B00ED0342 /* Combination Counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Combination Counter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA57B31625E7E96B00ED0342 /* Combination_CounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combination_CounterApp.swift; sourceTree = "<group>"; };
 		DA57B31825E7E96B00ED0342 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				DA57B33725E7EB1D00ED0342 /* ResultsView.swift */,
+				DA02D03B26403FC300B224B0 /* ShareSheet.swift */,
 			);
 			path = "Results Tab";
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				DA57B33825E7EB1D00ED0342 /* ResultsView.swift in Sources */,
 				DA57B32D25E7EAD600ED0342 /* ModuleListView.swift in Sources */,
 				DAE3C6C225EA63AE000D14E6 /* ChoiceEditor.swift in Sources */,
+				DA02D03C26403FC300B224B0 /* ShareSheet.swift in Sources */,
 				DAE3C6CA25EA65D3000D14E6 /* Choice.swift in Sources */,
 				DA57B33125E7EB0100ED0342 /* ChoiceListView.swift in Sources */,
 				DA57B33F25E7FFB500ED0342 /* ChoicesManager.swift in Sources */,

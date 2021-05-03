@@ -17,6 +17,7 @@ struct Combination_CounterApp: App {
     @Environment(\.scenePhase) var scenePhase
     
     
+    
     var body: some Scene {
         WindowGroup {
             FirstView()
