@@ -40,6 +40,7 @@
 		DAE3C6C925EA65D3000D14E6 /* Choice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Choice.swift; sourceTree = "<group>"; };
 		DAE3C6CD25EA694C000D14E6 /* ChoiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceCell.swift; sourceTree = "<group>"; };
 		DAE7405C25E928AE00406B4A /* ModuleEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleEditor.swift; sourceTree = "<group>"; };
+		DAF7888E263FF4DC00389197 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +57,7 @@
 		DA57B30A25E7E96B00ED0342 = {
 			isa = PBXGroup;
 			children = (
+				DAF7888E263FF4DC00389197 /* README.md */,
 				DA57B31525E7E96B00ED0342 /* Combination Counter */,
 				DA57B31425E7E96B00ED0342 /* Products */,
 			);
