@@ -18,7 +18,6 @@ struct Module: Identifiable, Hashable, Codable {
     var code: String
     var hours: Int
     var credits: Int
-    var semester: Int
     
     
     
@@ -26,9 +25,8 @@ struct Module: Identifiable, Hashable, Codable {
         id = UUID()
         name = "My New Module"
         code = "ABCD12345"
-        hours = 22
+        hours = 2
         credits = 20
-        semester = 1
     }
     
     

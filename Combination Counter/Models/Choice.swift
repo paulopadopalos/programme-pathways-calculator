@@ -10,7 +10,9 @@ import SwiftUI
 
 
 
-// MARK: - Class for representing choices.
+/// This class represents a choice, which is part of the a degree programme.
+/// The choice can take one of two forms - either select a certain number of modules
+/// from a list, or select modules whose combined credit value meets a specific criterion.
 
 
 
@@ -24,13 +26,7 @@ class Choice: Identifiable, ObservableObject, Codable {
     @Published var combinationCount: Int
     @Published var combinations: [[String]]
     var id: UUID
-    
-    
-    
-    // MARK: - Saving and Loading
-    /// Because we're using a custom enum (ChoiceType), just delaring this class as conforming to the
-    /// *Codable* protocol isn't enough  – we need to explicitly write the code for loading and saving.
-    
+
     
     
     init() {
@@ -78,10 +74,13 @@ class Choice: Identifiable, ObservableObject, Codable {
     }
     
     
-    
-    // MARK: - Functions for calculation of combinations
-    
-    
+	
+}
+
+
+
+private typealias CombinationCalculations = Choice
+extension CombinationCalculations {
     
     func calculateCombinations() {
         
@@ -101,7 +100,7 @@ class Choice: Identifiable, ObservableObject, Codable {
                 }
             
             case .credit:
-                /// This case is complicated. It's choose m from n, for all value of m between 1 and n.
+                /// This case is complicated. It's choose m from n, for all values of m between 1 and n.
                 /// We then have to validate each choice for whether it contains sufficient credits.
                 for counter in 1...self.modules.count {
                     let comboIndices = combosOfLength(n: self.modules.count, m: counter)
@@ -127,9 +126,24 @@ class Choice: Identifiable, ObservableObject, Codable {
         self.combinationCount = validCombinations.count
     }
     
+}
+
+
+
+private typealias RosettaCode = Choice
+extension RosettaCode {
+    /// The code is this extension is taken from the Rosetta Code website.
+    /// https://rosettacode.org/wiki/Combinations
+    /// The two functions allow us to determine the combinations of size m
+    /// of the integers between 0 and n-1. We can then use these combinations
+    /// of integers to pick modules from a list.
     
+    func combosOfLength(n: Int, m: Int) -> [[Int]] {
+        return [Int](1...m).reduce([([Int](), [Int](0..<n))]) { (accum, _) in
+          accum.flatMap(addCombo)
+        }.map { $0.0 }
+    }
     
-    /// Code taken from Rosetta Code: https://rosettacode.org/wiki/Combinations#Swift
     func addCombo(prevCombo: [Int], pivotList: [Int]) -> [([Int], [Int])] {
         var thisList = pivotList
         return (0..<thisList.count).map { _ -> ([Int], [Int]) in
@@ -137,22 +151,14 @@ class Choice: Identifiable, ObservableObject, Codable {
         }
     }
     
-    /// Code taken from Rosetta Code. This function is called for choosing m items from a list of n.
-    func combosOfLength(n: Int, m: Int) -> [[Int]] {
-        return [Int](1...m).reduce([([Int](), [Int](0..<n))]) { (accum, _) in
-          accum.flatMap(addCombo)
-        }.map {
-          $0.0
-        }
-    }
-
-  
-    
 }
 
 
 
-// MARK: - enum for types of choice
+// MARK:-
+/// This custom enum just gives us a neat way of distinguishing between whether
+/// a specific choice is about choosing a certain number of credits or a certain
+/// number of modules.
 
 
 
@@ -161,17 +167,15 @@ enum ChoiceType: Int, CaseIterable, Codable {
     case module
     case credit
     
-    func niceName() -> String {
-        switch(self) {
+    var name: String {
+        get {
+            switch(self) {
             case .module:
                 return "Modules"
             case .credit:
                 return "Credits"
+            }
         }
-    }
-    
-    var name: String {
-        get { return niceName() }
     }
 
 }

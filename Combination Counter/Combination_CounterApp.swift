@@ -23,14 +23,7 @@ struct Combination_CounterApp: App {
             FirstView()
                 .environmentObject(choicesManager)
         }
-        .onChange(of: scenePhase) { phase in
-            switch phase {
-                case .background:
-                    choicesManager.save()
-                default:
-                    break
-            }
-        }
+        .onChange(of: scenePhase) { _ in choicesManager.save() }
     }
     
     

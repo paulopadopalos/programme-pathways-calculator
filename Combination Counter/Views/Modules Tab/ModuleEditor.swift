@@ -73,21 +73,15 @@ struct ModuleEditor: View {
     
     
     func didPressOK() {
-        if (moduleName != "") {
             if (moduleCode != "") {
-                if let credits = Int(moduleCredits) {
-                    if let hours = Int(moduleHours) {
-                        var newModule = Module()
-                        newModule.name = moduleName
-                        newModule.code = moduleCode
-                        newModule.credits = credits
-                        newModule.hours = hours
-                        self.presentationMode.wrappedValue.dismiss()
-                        self.completionHandler(newModule)
-                    }
-                }
+                var newModule = Module()
+                newModule.name = moduleName
+                newModule.code = moduleCode
+                newModule.credits = Int(moduleCredits) ?? 0
+                newModule.hours = Int(moduleHours) ?? 0
+                self.presentationMode.wrappedValue.dismiss()
+                self.completionHandler(newModule)
             }
-        }
     }
     
     
