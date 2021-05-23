@@ -15,7 +15,7 @@ struct ChoiceListView: View {
     
     @EnvironmentObject var choicesManager: ChoicesManager
     
-    @State var isShowingChoiceEditor: Bool = false
+    @State var isShowingNewChoiceEditor: Bool = false
     
     
     
@@ -40,7 +40,7 @@ struct ChoiceListView: View {
                     Text("Add New Choice")
                         .padding()
                 }
-                .sheet(isPresented: $isShowingChoiceEditor,
+                .sheet(isPresented: $isShowingNewChoiceEditor,
                        content: { self.newChoiceSheet })
             }
             
@@ -53,7 +53,7 @@ struct ChoiceListView: View {
     
     
     func addNewEntry() {
-        isShowingChoiceEditor.toggle()
+        isShowingNewChoiceEditor.toggle()
     }
     
     
@@ -72,9 +72,12 @@ struct ChoiceListView: View {
         ChoiceEditor(completionHandler: { newChoice in
             newChoice.calculateCombinations()
             self.choicesManager.add(choice: newChoice)
-            self.isShowingChoiceEditor = false
+            self.isShowingNewChoiceEditor = false
         })
     }
+    
+    
+    
     
     
     

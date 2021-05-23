@@ -47,6 +47,11 @@ struct ModuleListView: View {
                 }
                 .sheet(isPresented: $isShowingModuleEditor,
                        content: { self.newModuleSheet })
+                Spacer()
+                Button (action: sortModules) {
+                    Image(systemName: "arrow.up.arrow.down.circle.fill")
+                        .padding()
+                }
             }
             
         }
@@ -60,6 +65,12 @@ struct ModuleListView: View {
     
     func addNewModule(){
         self.isShowingModuleEditor.toggle()
+    }
+    
+    
+    
+    func sortModules() {
+        self.choicesManager.sortModules()
     }
     
     

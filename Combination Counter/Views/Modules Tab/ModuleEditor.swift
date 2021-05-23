@@ -39,15 +39,15 @@ struct ModuleEditor: View {
                         .autocapitalization(.allCharacters)
                 }
                 Section (header: Text("Module Name")) {
-                    TextField("Module Name", text: $moduleName)
+                    TextField("Module Name (optional)", text: $moduleName)
                         .autocapitalization(.words)
                 }
                 Section (header: Text("Module Credits")) {
                     TextField("Module Credits", text: $moduleCredits)
                         .keyboardType(.numberPad)
                 }
-                Section (header: Text("Hours per week")) {
-                    TextField("Contact Hours", text: $moduleHours)
+                Section (header: Text("Contact Hours")) {
+                    TextField("Hours per week (optional)", text: $moduleHours)
                         .keyboardType(.numberPad)
                 }
             }

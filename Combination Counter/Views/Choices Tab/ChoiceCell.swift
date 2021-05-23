@@ -11,7 +11,11 @@ struct ChoiceCell: View {
     
     
     
-    var choice: Choice
+    @ObservedObject var choice: Choice
+    
+    
+    
+    @State var isShowingChoiceEditor: Bool = false
     
     
     

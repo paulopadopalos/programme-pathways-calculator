@@ -54,6 +54,12 @@ class ChoicesManager: ObservableObject {
     
     
     
+    func sortModules() {
+        self.moduleList.sort(by: { $0.code < $1.code })
+    }
+    
+    
+    
     // MARK: - Managing choice list.
     
     

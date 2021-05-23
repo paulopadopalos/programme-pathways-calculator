@@ -15,7 +15,7 @@ struct ChoiceEditor: View {
     
     @EnvironmentObject var choicesManager: ChoicesManager
     
-    @ObservedObject var choice: Choice = Choice()
+    @ObservedObject var choice: Choice
     
     @State private var choiceType = ChoiceType.allCases[0]
     
@@ -24,6 +24,14 @@ struct ChoiceEditor: View {
     
     
     init(completionHandler: @escaping ((Choice) -> Void )) {
+        self.choice = Choice()
+        self.completionHandler = completionHandler
+    }
+    
+    
+    
+    init(choice: Choice, completionHandler: @escaping ((Choice) -> Void )) {
+        self.choice = choice
         self.completionHandler = completionHandler
     }
     
