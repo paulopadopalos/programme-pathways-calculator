@@ -176,6 +176,15 @@ extension CombinationHelpers  {
             }
         }
         
+        // Now sort each programme combination in code order so that
+        // [MATH101, MATH102] and [MATH102,MATH101] look the same.
+        for i in 0..<self.programmeCombinations.count {
+            self.programmeCombinations[i].sort(by: {$0 < $1})
+        }
+        
+        // Now remove duplicates created by the previous step.
+        self.programmeCombinations = Array(Set(self.programmeCombinations))
+        
     }
     
     
