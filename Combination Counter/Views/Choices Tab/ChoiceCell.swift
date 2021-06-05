@@ -11,6 +11,10 @@ struct ChoiceCell: View {
     
     
     
+    @EnvironmentObject var choicesManager: ChoicesManager
+    
+    
+    
     @ObservedObject var choice: Choice
     
     
@@ -36,6 +40,9 @@ struct ChoiceCell: View {
                     .padding(2)
             }
         }
+        .onTapGesture(perform: didPressToEdit)
+        .sheet(isPresented: $isShowingChoiceEditor,
+               content: { self.editChoiceSheet } )
     }
     
     
@@ -76,6 +83,26 @@ struct ChoiceCell: View {
                 stringToDisplay += choice.modules[choice.modules.count - 1].code
         }
         return stringToDisplay
+    }
+    
+    
+    
+    func didPressToEdit(){
+        self.isShowingChoiceEditor = true
+    }
+    
+    
+    
+    // MARK: - Helper views
+
+    
+    
+    var editChoiceSheet : some View {
+        ChoiceEditor(choice: self.choice,
+                     completionHandler: { newChoice in
+                        newChoice.calculateCombinations()
+                        self.isShowingChoiceEditor = false
+        })
     }
     
     
