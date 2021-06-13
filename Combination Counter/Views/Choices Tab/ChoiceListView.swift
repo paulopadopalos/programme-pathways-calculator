@@ -23,8 +23,13 @@ struct ChoiceListView: View {
         VStack {
             
             // Header to aid user navigation.
-            Text("Choices")
-                .font(.headline)
+            HStack {
+                Text("Choices")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding()
+                Spacer()
+            }
             
             // List of modules.
             List {

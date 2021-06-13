@@ -160,6 +160,8 @@
 			dependencies = (
 			);
 			name = "Combination Counter";
+			packageProductDependencies = (
+			);
 			productName = "Combination Counter";
 			productReference = DA57B31325E7E96B00ED0342 /* Combination Counter.app */;
 			productType = "com.apple.product-type.application";
@@ -187,6 +189,8 @@
 				Base,
 			);
 			mainGroup = DA57B30A25E7E96B00ED0342;
+			packageReferences = (
+			);
 			productRefGroup = DA57B31425E7E96B00ED0342 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -363,7 +367,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "xyz.paulbrierley.programme-combo-counter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -386,7 +390,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "xyz.paulbrierley.programme-combo-counter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

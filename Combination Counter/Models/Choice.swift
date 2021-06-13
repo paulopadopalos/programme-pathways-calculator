@@ -10,9 +10,9 @@ import SwiftUI
 
 
 
-/// This class represents a choice, which is part of the a degree programme.
-/// The choice can take one of two forms - either select a certain number of modules
-/// from a list, or select modules whose combined credit value meets a specific criterion.
+// This class represents a choice, which is part of the a degree programme.
+// The choice can take one of two forms - either select a certain number of modules
+// from a list, or select modules whose combined credit value meets a specific criterion.
 
 
 
@@ -89,7 +89,7 @@ extension CombinationCalculations {
         switch (self.choiceType) {
             
             case .module:
-                /// This case is simple. It's just choose m from n.
+                // This case is simple. It's just choose m from n.
                 let comboIndices = combosOfLength(n: self.modules.count, m: self.choiceNumber)
                 for indexSet in comboIndices {
                     var newCombination: [String] = []
@@ -100,8 +100,8 @@ extension CombinationCalculations {
                 }
             
             case .credit:
-                /// This case is complicated. It's choose m from n, for all values of m between 1 and n.
-                /// We then have to validate each choice for whether it contains sufficient credits.
+                // This case is complicated. It's choose m from n, for all values of m between 1 and n.
+                // We then have to validate each choice for whether it contains sufficient credits.
                 for counter in 1...self.modules.count {
                     let comboIndices = combosOfLength(n: self.modules.count, m: counter)
                     for indexSet in comboIndices {
@@ -121,7 +121,6 @@ extension CombinationCalculations {
                     }
                 }
         }
-        print(validCombinations)
         self.combinations = validCombinations
         self.combinationCount = validCombinations.count
     }
@@ -132,11 +131,11 @@ extension CombinationCalculations {
 
 private typealias RosettaCode = Choice
 extension RosettaCode {
-    /// The code is this extension is taken from the Rosetta Code website.
-    /// https://rosettacode.org/wiki/Combinations
-    /// The two functions allow us to determine the combinations of size m
-    /// of the integers between 0 and n-1. We can then use these combinations
-    /// of integers to pick modules from a list.
+    // The code is this extension is taken from the Rosetta Code website.
+    // https://rosettacode.org/wiki/Combinations
+    // The two functions allow us to determine the combinations of size m
+    // of the integers between 0 and n-1. We can then use these combinations
+    // of integers to pick modules from a list.
     
     func combosOfLength(n: Int, m: Int) -> [[Int]] {
         return [Int](1...m).reduce([([Int](), [Int](0..<n))]) { (accum, _) in
@@ -156,9 +155,9 @@ extension RosettaCode {
 
 
 // MARK:-
-/// This custom enum just gives us a neat way of distinguishing between whether
-/// a specific choice is about choosing a certain number of credits or a certain
-/// number of modules.
+// This custom enum just gives us a neat way of distinguishing between whether
+// a specific choice is about choosing a certain number of credits or a certain
+// number of modules.
 
 
 

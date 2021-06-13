@@ -22,38 +22,42 @@ struct ModuleCell: View {
             VStack {
                 HStack {
                     Text(module.code)
-                        .font(.headline)
-                        .fontWeight(.bold)
+                        .font(.title)
+                        .fontWeight(.heavy)
                         .lineLimit(1)
-                        .padding(.bottom, 5)
                     Spacer()
                 }
                 HStack {
                     Text(module.name)
-                        .padding(.bottom, 5)
+                        .italic()
                     Spacer()
                 }
             }
             VStack {
                 Text("\(module.credits) credits")
-                    .font(.system(size: 12.0, weight: .regular))
+                    .font(.system(size: 12.0, weight: .bold))
                     .lineLimit(1)
                     .foregroundColor(.white)
                     .padding(5)
                     .background(Color.green)
                     .cornerRadius(5)
+                    .overlay(RoundedRectangle(cornerRadius: 5)
+                                .stroke(Color.black, lineWidth: 1))
                 Text("\(module.hours) hours")
-                    .font(.system(size: 12.0, weight: .regular))
+                    .font(.system(size: 12.0, weight: .bold))
                     .lineLimit(1)
                     .foregroundColor(.white)
                     .padding(5)
                     .background(Color.green)
                     .cornerRadius(5)
+                    .overlay(RoundedRectangle(cornerRadius: 5)
+                                .stroke(Color.black, lineWidth: 1))
             }
         }
-        .padding(15)
-        .background(Color.gray)
+        .padding(10)
         .clipShape(RoundedRectangle(cornerRadius: 15))
+        .overlay(RoundedRectangle(cornerRadius: 15)
+                    .stroke(Color.black, lineWidth:2))
     }
     
     

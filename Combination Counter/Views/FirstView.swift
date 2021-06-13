@@ -16,7 +16,7 @@ struct FirstView: View {
             // First Tab
             ModuleListView()
                 .tabItem {
-                    Image(systemName:"cube")
+                    Image(systemName:"books.vertical")
                     Text("Modules")
                 }
             
@@ -31,7 +31,7 @@ struct FirstView: View {
             ResultsView()
                 .tabItem {
                     Image(systemName:"binoculars")
-                    Text("Results")
+                    Text("Pathways")
                 }
             
         }

@@ -29,8 +29,13 @@ struct ResultsView: View {
         VStack {
             
             // Header to aid user navigation.
-            Text("Combinations")
-                .font(.headline)
+            HStack {
+                Text("Pathways")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding()
+                Spacer()
+            }
             
             // Button for triggering the calculation.
             Button (action: calculateCombinations) {
@@ -50,27 +55,33 @@ struct ResultsView: View {
                 ForEach(choicesManager.programmeCombinations, id:\.self) { myCombo in
                     HStack {
                         Text(wordingForCombination(combo: myCombo))
-                            .padding(10)
-                            .background(Color.gray)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .fontWeight(.heavy)
                         Spacer()
                         VStack {
                             Text("\(creditsFor(combination: myCombo)) credits")
-                                .font(.system(size: 12.0, weight: .regular))
+                                .font(.system(size: 12.0, weight: .bold))
                                 .lineLimit(1)
                                 .foregroundColor(.white)
                                 .padding(5)
                                 .background(Color.green)
                                 .cornerRadius(5)
+                                .overlay(RoundedRectangle(cornerRadius: 5)
+                                            .stroke(Color.black, lineWidth: 1))
                             Text("\(hoursFor(combination: myCombo)) hours")
-                                .font(.system(size: 12.0, weight: .regular))
+                                .font(.system(size: 12.0, weight: .bold))
                                 .lineLimit(1)
                                 .foregroundColor(.white)
                                 .padding(5)
                                 .background(Color.green)
                                 .cornerRadius(5)
+                                .overlay(RoundedRectangle(cornerRadius: 5)
+                                            .stroke(Color.black, lineWidth: 1))
                         }
                     }
+                    .padding(10)
+                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                    .overlay(RoundedRectangle(cornerRadius: 15)
+                                .stroke(Color.black, lineWidth:2))
                 }
             }
             Button(action:exportCombinations) {

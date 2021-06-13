@@ -24,8 +24,13 @@ struct ModuleListView: View {
         VStack {
             
             // Header to aid user navigation.
-            Text("Modules")
-                .font(.headline)
+            HStack {
+                Text("Modules")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding()
+                Spacer()
+            }
             
             // List of modules.
             List {
@@ -49,7 +54,7 @@ struct ModuleListView: View {
                        content: { self.newModuleSheet })
                 Spacer()
                 Button (action: sortModules) {
-                    Image(systemName: "arrow.up.arrow.down.circle.fill")
+                    Text("Sort by Code")
                         .padding()
                 }
             }

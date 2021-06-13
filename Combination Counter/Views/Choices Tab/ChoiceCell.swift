@@ -27,19 +27,27 @@ struct ChoiceCell: View {
         VStack {
             HStack {
                 Text(choiceLabel())
-                    .italic()
+                    .font(.body)
                 Spacer()
+                Text("\(choice.combinationCount) combinations.")
+                    .font(.system(size: 12.0, weight: .bold))
+                    .foregroundColor(.white)
+                    .padding(5)
+                    .background(Color.green)
+                    .cornerRadius(5)
+                    .overlay(RoundedRectangle(cornerRadius: 5)
+                                .stroke(Color.black, lineWidth: 1))
+                
             }
             Text(textFor(choice: choice))
                 .fontWeight(.bold)
                 .fixedSize(horizontal: false, vertical: true)
-            HStack {
-                Spacer()
-                Text("\(choice.combinationCount) possible combinations.")
-                    .font(.caption)
-                    .padding(2)
-            }
+
         }
+        .padding(10)
+        .clipShape(RoundedRectangle(cornerRadius: 15))
+        .overlay(RoundedRectangle(cornerRadius: 15)
+                    .stroke(Color.black, lineWidth:2))
         .onTapGesture(perform: didPressToEdit)
         .sheet(isPresented: $isShowingChoiceEditor,
                content: { self.editChoiceSheet } )
@@ -62,7 +70,7 @@ struct ChoiceCell: View {
         if (choice.choiceNumber > 1) {
             label = label + "s"
         }
-        label = label + " from the following"
+        label = label + " from:"
         return label
     }
     
