@@ -8,24 +8,23 @@
 import SwiftUI
 
 @main
-struct Combination_CounterApp: App {
+struct Combination_CounterApp: App
+{
     
+  @StateObject var dataManager = DataManager()
+  @Environment(\.scenePhase) var scenePhase
     
-    
-    @StateObject var choicesManager = ChoicesManager()
-    
-    @Environment(\.scenePhase) var scenePhase
-    
-    
-    
-    var body: some Scene {
-        WindowGroup {
-            FirstView()
-                .environmentObject(choicesManager)
-        }
-        .onChange(of: scenePhase) { _ in choicesManager.save() }
+  var body: some Scene
+  {
+    WindowGroup
+    {
+      FirstView()
+        .environmentObject(dataManager)
     }
-    
-    
+    .onChange(of: scenePhase)
+    {
+      _ in dataManager.save()
+    }
+  }
     
 }

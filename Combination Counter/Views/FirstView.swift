@@ -9,33 +9,53 @@ import SwiftUI
 
 
 
-struct FirstView: View {
-    var body: some View {
-        TabView {
-            
-            // First Tab
-            ModuleListView()
-                .tabItem {
-                    Image(systemName:"books.vertical")
-                    Text("Modules")
-                }
-            
-            // Second Tab
-            ChoiceListView()
-                .tabItem {
-                    Image(systemName:"hand.point.up.left")
-                    Text("Choices")
-                }
-            
-            // Third Tab
-            ResultsView()
-                .tabItem {
-                    Image(systemName:"binoculars")
-                    Text("Pathways")
-                }
-            
+struct FirstView: View
+{
+  var body: some View
+  {
+    NavigationView
+    {
+      VStack
+      {
+        HStack
+        {
+          NavigationLink(destination: ProgrammeListView())
+          {
+            Image(systemName: "graduationcap")
+            Text("Programmes")
+              .font(.title)
+            Spacer()
+            Image(systemName:"chevron.right.circle.fill")
+          }
         }
+        .foregroundColor(.white)
+        .padding()
+        .background(Color.blue)
+        .cornerRadius(8)
+        
+        HStack
+        {
+          NavigationLink(destination: ModuleListView())
+          {
+            Image(systemName: "books.vertical")
+            Text("Modules")
+              .font(.title)
+            Spacer()
+            Image(systemName:"chevron.right.circle.fill")
+          }
+        }
+        .foregroundColor(.white)
+        .padding()
+        .background(Color.green)
+        .cornerRadius(8)
+        Spacer()
+        
+      }
+      .padding()
+      .navigationTitle("Combo Counter")
     }
+  }
+  
 }
 
 
@@ -47,6 +67,6 @@ struct FirstView: View {
 struct FirstView_Previews: PreviewProvider {
     static var previews: some View {
         FirstView()
-            .environmentObject(ChoicesManager())
+            .environmentObject(DataManager())
     }
 }

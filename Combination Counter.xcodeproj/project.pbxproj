@@ -3,29 +3,35 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		DA02D03C26403FC300B224B0 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA02D03B26403FC300B224B0 /* ShareSheet.swift */; };
+		DA2A2DF126E8A75C004FC092 /* ProgrammeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2A2DF026E8A75C004FC092 /* ProgrammeCell.swift */; };
+		DA2A2DF526E8BC7F004FC092 /* ProgrammeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2A2DF426E8BC7F004FC092 /* ProgrammeEditor.swift */; };
+		DA2A2DF726E8E2AD004FC092 /* ChoiceEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2A2DF626E8E2AD004FC092 /* ChoiceEditor.swift */; };
 		DA57B31725E7E96B00ED0342 /* Combination_CounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57B31625E7E96B00ED0342 /* Combination_CounterApp.swift */; };
 		DA57B31925E7E96B00ED0342 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57B31825E7E96B00ED0342 /* FirstView.swift */; };
 		DA57B31B25E7E96E00ED0342 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA57B31A25E7E96E00ED0342 /* Assets.xcassets */; };
 		DA57B31E25E7E96E00ED0342 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA57B31D25E7E96E00ED0342 /* Preview Assets.xcassets */; };
 		DA57B32A25E7E9CA00ED0342 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57B32925E7E9CA00ED0342 /* Module.swift */; };
 		DA57B32D25E7EAD600ED0342 /* ModuleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57B32C25E7EAD600ED0342 /* ModuleListView.swift */; };
-		DA57B33125E7EB0100ED0342 /* ChoiceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57B33025E7EB0100ED0342 /* ChoiceListView.swift */; };
-		DA57B33825E7EB1D00ED0342 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57B33725E7EB1D00ED0342 /* ResultsView.swift */; };
-		DA57B33F25E7FFB500ED0342 /* ChoicesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57B33E25E7FFB500ED0342 /* ChoicesManager.swift */; };
+		DA57B33F25E7FFB500ED0342 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57B33E25E7FFB500ED0342 /* DataManager.swift */; };
 		DAE3C6BF25EA5ACC000D14E6 /* ModuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3C6BE25EA5ACC000D14E6 /* ModuleCell.swift */; };
-		DAE3C6C225EA63AE000D14E6 /* ChoiceEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3C6C125EA63AE000D14E6 /* ChoiceEditor.swift */; };
 		DAE3C6CA25EA65D3000D14E6 /* Choice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3C6C925EA65D3000D14E6 /* Choice.swift */; };
-		DAE3C6CE25EA694C000D14E6 /* ChoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3C6CD25EA694C000D14E6 /* ChoiceCell.swift */; };
 		DAE7405D25E928AE00406B4A /* ModuleEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE7405C25E928AE00406B4A /* ModuleEditor.swift */; };
+		DAEBA59D26E7915000A10903 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = DAEBA59C26E7915000A10903 /* Algorithms */; };
+		DAEBA5A126E7953200A10903 /* Programme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBA5A026E7953200A10903 /* Programme.swift */; };
+		DAEBA5A726E7A7EF00A10903 /* ProgrammeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEBA5A626E7A7EF00A10903 /* ProgrammeListView.swift */; };
+		DAF95C5D26EFD37D000D45D7 /* PathwaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF95C5C26EFD37D000D45D7 /* PathwaysView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DA02D03B26403FC300B224B0 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
+		DA2A2DF026E8A75C004FC092 /* ProgrammeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeCell.swift; sourceTree = "<group>"; };
+		DA2A2DF426E8BC7F004FC092 /* ProgrammeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeEditor.swift; sourceTree = "<group>"; };
+		DA2A2DF626E8E2AD004FC092 /* ChoiceEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceEditor.swift; sourceTree = "<group>"; };
 		DA57B31325E7E96B00ED0342 /* Combination Counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Combination Counter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA57B31625E7E96B00ED0342 /* Combination_CounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combination_CounterApp.swift; sourceTree = "<group>"; };
 		DA57B31825E7E96B00ED0342 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
@@ -34,15 +40,14 @@
 		DA57B31F25E7E96E00ED0342 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA57B32925E7E9CA00ED0342 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		DA57B32C25E7EAD600ED0342 /* ModuleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleListView.swift; sourceTree = "<group>"; };
-		DA57B33025E7EB0100ED0342 /* ChoiceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceListView.swift; sourceTree = "<group>"; };
-		DA57B33725E7EB1D00ED0342 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
-		DA57B33E25E7FFB500ED0342 /* ChoicesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoicesManager.swift; sourceTree = "<group>"; };
+		DA57B33E25E7FFB500ED0342 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		DAE3C6BE25EA5ACC000D14E6 /* ModuleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCell.swift; sourceTree = "<group>"; };
-		DAE3C6C125EA63AE000D14E6 /* ChoiceEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceEditor.swift; sourceTree = "<group>"; };
 		DAE3C6C925EA65D3000D14E6 /* Choice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Choice.swift; sourceTree = "<group>"; };
-		DAE3C6CD25EA694C000D14E6 /* ChoiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceCell.swift; sourceTree = "<group>"; };
 		DAE7405C25E928AE00406B4A /* ModuleEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleEditor.swift; sourceTree = "<group>"; };
+		DAEBA5A026E7953200A10903 /* Programme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Programme.swift; sourceTree = "<group>"; };
+		DAEBA5A626E7A7EF00A10903 /* ProgrammeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeListView.swift; sourceTree = "<group>"; };
 		DAF7888E263FF4DC00389197 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DAF95C5C26EFD37D000D45D7 /* PathwaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathwaysView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAEBA59D26E7915000A10903 /* Algorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,9 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				DA57B31825E7E96B00ED0342 /* FirstView.swift */,
-				DAE3C6C425EA6493000D14E6 /* Modules Tab */,
-				DAE3C6C625EA649D000D14E6 /* Choices Tab */,
-				DA635FAD2624712E00BB7ACB /* Results Tab */,
+				DAEBA5A826E7A7F600A10903 /* Programmes */,
+				DAE3C6C425EA6493000D14E6 /* Modules */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -108,40 +113,35 @@
 		DA57B32825E7E9AE00ED0342 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DA57B32925E7E9CA00ED0342 /* Module.swift */,
+				DAEBA5A026E7953200A10903 /* Programme.swift */,
 				DAE3C6C925EA65D3000D14E6 /* Choice.swift */,
-				DA57B33E25E7FFB500ED0342 /* ChoicesManager.swift */,
+				DA57B32925E7E9CA00ED0342 /* Module.swift */,
+				DA57B33E25E7FFB500ED0342 /* DataManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		DA635FAD2624712E00BB7ACB /* Results Tab */ = {
-			isa = PBXGroup;
-			children = (
-				DA57B33725E7EB1D00ED0342 /* ResultsView.swift */,
-				DA02D03B26403FC300B224B0 /* ShareSheet.swift */,
-			);
-			path = "Results Tab";
-			sourceTree = "<group>";
-		};
-		DAE3C6C425EA6493000D14E6 /* Modules Tab */ = {
+		DAE3C6C425EA6493000D14E6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				DA57B32C25E7EAD600ED0342 /* ModuleListView.swift */,
 				DAE3C6BE25EA5ACC000D14E6 /* ModuleCell.swift */,
 				DAE7405C25E928AE00406B4A /* ModuleEditor.swift */,
 			);
-			path = "Modules Tab";
+			path = Modules;
 			sourceTree = "<group>";
 		};
-		DAE3C6C625EA649D000D14E6 /* Choices Tab */ = {
+		DAEBA5A826E7A7F600A10903 /* Programmes */ = {
 			isa = PBXGroup;
 			children = (
-				DA57B33025E7EB0100ED0342 /* ChoiceListView.swift */,
-				DAE3C6CD25EA694C000D14E6 /* ChoiceCell.swift */,
-				DAE3C6C125EA63AE000D14E6 /* ChoiceEditor.swift */,
+				DAEBA5A626E7A7EF00A10903 /* ProgrammeListView.swift */,
+				DA2A2DF026E8A75C004FC092 /* ProgrammeCell.swift */,
+				DA2A2DF426E8BC7F004FC092 /* ProgrammeEditor.swift */,
+				DA2A2DF626E8E2AD004FC092 /* ChoiceEditor.swift */,
+				DAF95C5C26EFD37D000D45D7 /* PathwaysView.swift */,
+				DA02D03B26403FC300B224B0 /* ShareSheet.swift */,
 			);
-			path = "Choices Tab";
+			path = Programmes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,9 +158,11 @@
 			buildRules = (
 			);
 			dependencies = (
+				DAEBA59F26E7916F00A10903 /* PBXTargetDependency */,
 			);
 			name = "Combination Counter";
 			packageProductDependencies = (
+				DAEBA59C26E7915000A10903 /* Algorithms */,
 			);
 			productName = "Combination Counter";
 			productReference = DA57B31325E7E96B00ED0342 /* Combination Counter.app */;
@@ -190,6 +192,7 @@
 			);
 			mainGroup = DA57B30A25E7E96B00ED0342;
 			packageReferences = (
+				DAEBA59B26E7914F00A10903 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
 			productRefGroup = DA57B31425E7E96B00ED0342 /* Products */;
 			projectDirPath = "";
@@ -217,23 +220,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA2A2DF126E8A75C004FC092 /* ProgrammeCell.swift in Sources */,
+				DAF95C5D26EFD37D000D45D7 /* PathwaysView.swift in Sources */,
+				DAEBA5A126E7953200A10903 /* Programme.swift in Sources */,
 				DAE7405D25E928AE00406B4A /* ModuleEditor.swift in Sources */,
+				DAEBA5A726E7A7EF00A10903 /* ProgrammeListView.swift in Sources */,
+				DA2A2DF726E8E2AD004FC092 /* ChoiceEditor.swift in Sources */,
 				DA57B31925E7E96B00ED0342 /* FirstView.swift in Sources */,
-				DA57B33825E7EB1D00ED0342 /* ResultsView.swift in Sources */,
 				DA57B32D25E7EAD600ED0342 /* ModuleListView.swift in Sources */,
-				DAE3C6C225EA63AE000D14E6 /* ChoiceEditor.swift in Sources */,
 				DA02D03C26403FC300B224B0 /* ShareSheet.swift in Sources */,
 				DAE3C6CA25EA65D3000D14E6 /* Choice.swift in Sources */,
-				DA57B33125E7EB0100ED0342 /* ChoiceListView.swift in Sources */,
-				DA57B33F25E7FFB500ED0342 /* ChoicesManager.swift in Sources */,
+				DA57B33F25E7FFB500ED0342 /* DataManager.swift in Sources */,
 				DA57B31725E7E96B00ED0342 /* Combination_CounterApp.swift in Sources */,
-				DAE3C6CE25EA694C000D14E6 /* ChoiceCell.swift in Sources */,
 				DA57B32A25E7E9CA00ED0342 /* Module.swift in Sources */,
 				DAE3C6BF25EA5ACC000D14E6 /* ModuleCell.swift in Sources */,
+				DA2A2DF526E8BC7F004FC092 /* ProgrammeEditor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DAEBA59F26E7916F00A10903 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = DAEBA59E26E7916F00A10903 /* Algorithms */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		DA57B32025E7E96E00ED0342 /* Debug */ = {
@@ -367,7 +379,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "xyz.paulbrierley.programme-combo-counter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -390,7 +402,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "xyz.paulbrierley.programme-combo-counter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -420,6 +432,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DAEBA59B26E7914F00A10903 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms";
+			requirement = {
+				kind = exactVersion;
+				version = 0.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DAEBA59C26E7915000A10903 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAEBA59B26E7914F00A10903 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+		DAEBA59E26E7916F00A10903 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAEBA59B26E7914F00A10903 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DA57B30B25E7E96B00ED0342 /* Project object */;
 }

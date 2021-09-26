@@ -22,7 +22,6 @@ struct ModuleCell: View {
             VStack {
                 HStack {
                     Text(module.code)
-                        .font(.title)
                         .fontWeight(.heavy)
                         .lineLimit(1)
                     Spacer()
@@ -70,8 +69,14 @@ struct ModuleCell: View {
 
 
 
-struct ModuleCell_Previews: PreviewProvider {
-    static var previews: some View {
-        ModuleCell(module: Module())
-    }
+struct ModuleCell_Previews: PreviewProvider
+{
+  static var previews: some View
+  {
+    ModuleCell(module: Module(id: UUID(),
+                              name: "Some Module",
+                              code: "ABCD1234",
+                              hours: 2,
+                              credits: 20))
+  }
 }

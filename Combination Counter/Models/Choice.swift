@@ -6,17 +6,139 @@
 //
 
 import Foundation
-import SwiftUI
+import Algorithms
+
+
+struct Choice: Identifiable, Codable
+{
+  
+  var id: UUID
+  var low: Int
+  var high: Int
+  var modules: [Module]
+  var rangeOrExact: Int
+  var modulesOrCredits: Int
+  
+  var description: String
+  {
+    var text = ""
+    switch(rangeOrExact)
+    {
+      case RangeOrExact.range.rawValue:
+        text = "Choose \(low) to \(high) "
+      default:
+        text = "Choose \(low) "
+    }
+    switch(modulesOrCredits)
+    {
+      case ModulesOrCredits.modules.rawValue:
+        text = text + "modules "
+      default:
+        text = text + "credits "
+    }
+    text = text + "from \(modules.count) modules."
+    return text
+  }
+  
+  var numberOfCombinations: Int
+  {
+    return self.combinations.count
+  }
+  
+  
+  var combinations: [[Module]]
+  {
+    // Four possible ways we need to calculate combinations
+    // 1. Pick X modules.
+    // 2. Pick X to Y modules.
+    // 3. Pick X credits.
+    // 4. Pick X to Y credits.
+    var combinations:[[Module]] = []
+    // If there are no modules selected for this choice, we can shortcut
+    // this whole section of code.
+    if self.modules.count == 0
+    {
+      return combinations
+    }
+    switch (rangeOrExact, modulesOrCredits)
+    {
+      case (RangeOrExact.exact.rawValue, ModulesOrCredits.modules.rawValue):
+        // Scenario 1. Pick X modules.
+        let combos = self.modules.combinations(ofCount: low)
+        for combo in combos
+        {
+          combinations.append(combo)
+        }
+        break
+      case (RangeOrExact.range.rawValue, ModulesOrCredits.modules.rawValue):
+        // Scenario 2. Pick X to Y modules.
+        let combos = self.modules.combinations(ofCount: low...high)
+        for combo in combos
+        {
+          combinations.append(combo)
+        }
+        break
+      case (RangeOrExact.exact.rawValue, ModulesOrCredits.credits.rawValue):
+        // Scenario 3. Pick X credits.
+        let combos = self.modules.combinations(ofCount: 1...self.modules.count)
+        for combo in combos
+        {
+          var credits = 0
+          for module in combo
+          {
+            credits += module.credits
+          }
+          if (credits == self.low)
+          {
+            combinations.append(combo)
+          }
+        }
+        break
+      default:
+        // Scenario 4. Pick X to Y credits.
+        let combos = self.modules.combinations(ofCount: 1...self.modules.count)
+        for combo in combos
+        {
+          var credits = 0
+          for module in combo
+          {
+            credits += module.credits
+          }
+          if ((credits >= self.low) && (credits <= self.high))
+          {
+            combinations.append(combo)
+          }
+        }
+      break
+    }
+    return combinations
+  }
+  
+  
+  
+}
 
 
 
-// This class represents a choice, which is part of the a degree programme.
-// The choice can take one of two forms - either select a certain number of modules
-// from a list, or select modules whose combined credit value meets a specific criterion.
+enum RangeOrExact: Int
+{
+  case range = 0
+  case exact = 1
+}
 
 
 
-class Choice: Identifiable, ObservableObject, Codable {
+enum ModulesOrCredits: Int
+{
+  case modules = 0
+  case credits = 1
+}
+
+
+
+
+
+/*class Choice: Identifiable, ObservableObject, Codable {
     
     
     
@@ -154,27 +276,4 @@ extension RosettaCode {
 
 
 
-// MARK:-
-// This custom enum just gives us a neat way of distinguishing between whether
-// a specific choice is about choosing a certain number of credits or a certain
-// number of modules.
-
-
-
-enum ChoiceType: Int, CaseIterable, Codable {
-    
-    case module
-    case credit
-    
-    var name: String {
-        get {
-            switch(self) {
-            case .module:
-                return "Modules"
-            case .credit:
-                return "Credits"
-            }
-        }
-    }
-
-}
+*/

@@ -9,26 +9,13 @@ import Foundation
 
 
 
-struct Module: Identifiable, Hashable, Codable {
-    
-    
-    
-    var id: UUID
-    var name: String
-    var code: String
-    var hours: Int
-    var credits: Int
-    
-    
-    
-    init() {
-        id = UUID()
-        name = "My New Module"
-        code = "ABCD12345"
-        hours = 2
-        credits = 20
-    }
-    
-    
-    
+struct Module: Identifiable, Hashable, Codable
+{
+  
+  var id: UUID
+  var name: String
+  var code: String
+  var hours: Int
+  var credits: Int
+  
 }
