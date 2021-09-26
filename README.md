@@ -8,7 +8,7 @@ The app is divided into two main sections, **Modules** and **Programmes**.
 The job of a timetabler is to design a schedule for modules which allows for the various combinations of modules which students on different programmes may take. Therefore the amount of choice a programme offers is a measure of how easy or difficult it will be to schedule the modules.
 When programmes are designed it is not always obvious how the choices offered to students will impact the timetable. This tool helps curriculum designers to measure the impact of the changes they are making.
 
-##Some simple examples
+## Some simple examples
 - Allowing students to choose **4 modules from a list of 10** offers a total of **210 pathways**.
 - Adding an extra choice, **4 modules from a list of 11** increases the number to **330 pathways**.
 - Restructuring this as **2 modules from a list of 5** and **2 modules from a list of 6** decreases the number to **150 pathways**.
